@@ -3,15 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-  rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-  rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css.css">
   <title>Slash | Garagem</title>
 </head>
 <body>
+  <main id="container_garagem">
+    <div class="main_container">
+      <section id="cascade-slider" class="slide_container">
+        <figure class="cascade-slider_arrow">
+          <img alt="flecha apontada para esquerda" src="images/arrow_left.png" />
+        </figure>
+        <div class="cascade-slider_slides">
+          <figure class="item_car_garagem">
+            <img alt="carro" src="images/car_model.png" />
+          </figure>
+        </div>
+        <figure class="cascade-slider_arrow">
+          <img alt="flecha apontada para direita" src="images/arrow_right.png" />
+        </figure>
+      </section>
+      <section class="car_info_container">
+        <div class="car_data">
+          <div class="subtitle">
+            <span>DADOS GERAIS</span>
+          </div>
+
+          <div class="data_content">
+            <div class="general_data">
+              <div class="data_title">
+                <span>MOTOR</span>
+              </div>
+              <div class="data_percent">
+                <span>86%</span>
+              </div>
+            </div>
   
+            <div class="general_data">
+              <div class="data_title">
+                <span>FREIOS</span>
+              </div>
+              <div class="data_percent">
+                <span>33%</span>
+              </div>
+            </div>
+  
+            <div class="general_data">
+              <div class="data_title">
+                <span>LATARIA</span>
+              </div>
+              <div class="data_percent">
+                <span>86%</span>
+              </div>
+            </div>
+  
+            <div class="general_data">
+              <div class="data_title">
+                <span>TRAÇÃO</span>
+              </div>
+              <div class="data_percent">
+                <span>86%</span>
+              </div>
+            </div>
+  
+            <div class="general_data">
+              <div class="data_title">
+                <span>COMBUSTIVEL</span>
+              </div>
+              <div class="data_percent">
+                <span>86%</span>
+              </div>
+            </div>
+  
+            <div class="general_data">
+              <div class="data_title">
+                <span>INVENTÁRIO</span>
+              </div>
+              <div class="data_slot align-center">
+                <span>4 SLOTS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="title">
+          <h1 class="name_garagem">SUPER SULTAN RS</h1>
+          <div class="underlined"></div>
+        </div>
+        <div class="divider"></div>
+        <div class="car_data">
+          <div class="subtitle">
+            <span>TUNAGEM</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
 <script src="script.js"></script>
 <script src="cascade.js"></script>
 </body>
