@@ -35,7 +35,7 @@ var garage = {
     let categoryList = $("#category-list");
     let vehiclesHtml = "";
     let categoriesHtml = "";
-    $(".search_garagem").val("");
+    $(".search_input").val("");
     garage.vehicles = data.vehicles;
     garage.type = data.garageType;
     garage.nuiType = data.type;
@@ -111,7 +111,7 @@ var garage = {
   },
 
   search: () => {
-    let value = $(".search_garagem").val().toLowerCase();
+    let value = $(".search_input").val().toLowerCase();
     // $('.cascade-slider_slides').filter(function(){
     //     $(this).toggle($(this).text().toLowerCase().indexOf(value) > 1)
     // });
