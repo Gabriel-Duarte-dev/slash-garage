@@ -142,9 +142,9 @@ var garage = {
 
     Object.values(garage.renderCars).map((item, index) => {
       $(".cascade-slider_slides").append(`
-                <div id="car_garagem1" class="item_car_garagem car${index}" data-slide-number="${index}">
+                <figure id="car_garagem1" class="item_car_garagem car${index}" data-slide-number="${index}">
                     <img src="http://181.215.253.124/images/nyo_garages/${item.vehicle}.png" alt="">
-                </div>
+                </figure>
             `);
     });
 
@@ -192,14 +192,13 @@ var garage = {
     }
 
     $(".stats_car_garagem span").html(
-      `${
-        garage.selectedCar.taxLate
-          ? `Taxas atrasadas ($ ${garage.selectedCar.taxPrice})`
-          : garage.selectedCar.exploded
+      `${garage.selectedCar.taxLate
+        ? `Taxas atrasadas ($ ${garage.selectedCar.taxPrice})`
+        : garage.selectedCar.exploded
           ? "Veículo Explodido"
           : garage.selectedCar.impound
-          ? "Veículo detido"
-          : "Liberado"
+            ? "Veículo detido"
+            : "Liberado"
       }`
     );
 
@@ -376,39 +375,36 @@ var garage = {
                 <div class="column">
                     <div class="info-column">
                     <small>Status</small>
-                    <span>${
-                      vehCfg.allowed == false
-                        ? garages.lang.isNotAllowedToSpawnCar
-                        : vehCfg.taxLate
-                        ? garages.lang.taxLate
-                        : vehCfg.exploded
-                        ? garages.lang.vehicleExploded
-                        : vehCfg.impound
-                        ? garages.lang.vehicleImpounded
-                        : garages.lang.vehicleOk
-                    }</span>
+                    <span>${vehCfg.allowed == false
+        ? garages.lang.isNotAllowedToSpawnCar
+        : vehCfg.taxLate
+          ? garages.lang.taxLate
+          : vehCfg.exploded
+            ? garages.lang.vehicleExploded
+            : vehCfg.impound
+              ? garages.lang.vehicleImpounded
+              : garages.lang.vehicleOk
+      }</span>
                     </div>
                     <div class="info-column">
                     <small>${garages.lang.garageType}</small>
                     <span>${garage.type}</span>
                     </div>
                     <div class="info-column">
-                    <small>${
-                      vehCfg.taxLate
-                        ? garages.lang.taxLate2
-                        : vehCfg.exploded || vehCfg.impound
-                        ? garages.lang.insurance
-                        : vehCfg.garageTax
-                        ? garages.lang.garageTax
-                        : garages.lang.taxLate2
-                    }</small>
-                    <span>${
-                      vehCfg.taxLate || vehCfg.exploded || vehCfg.impound
-                        ? "$" + vehCfg.taxPrice
-                        : vehCfg.garageTax
-                        ? "$" + vehCfg.garageTax
-                        : garages.lang.noTax
-                    }</span>
+                    <small>${vehCfg.taxLate
+        ? garages.lang.taxLate2
+        : vehCfg.exploded || vehCfg.impound
+          ? garages.lang.insurance
+          : vehCfg.garageTax
+            ? garages.lang.garageTax
+            : garages.lang.taxLate2
+      }</small>
+                    <span>${vehCfg.taxLate || vehCfg.exploded || vehCfg.impound
+        ? "$" + vehCfg.taxPrice
+        : vehCfg.garageTax
+          ? "$" + vehCfg.garageTax
+          : garages.lang.noTax
+      }</span>
                     </div>
                 </div>
                 </div>
@@ -417,119 +413,111 @@ var garage = {
                 <div class="column">
                     <div class="row">
                     <span>Motor</span>
-                    <small>${
-                      (vehCfg.custom
-                        ? parseInt(vehCfg.custom["11"]) || -1
-                        : -1) + 1
-                    } / 4</small>
+                    <small>${(vehCfg.custom
+        ? parseInt(vehCfg.custom["11"]) || -1
+        : -1) + 1
+      } / 4</small>
                     <div class="bar">
                         ${garage.generateBars(
-                          (vehCfg.custom
-                            ? parseInt(vehCfg.custom["11"]) || -1
-                            : -1) + 1,
-                          4
-                        )}
+        (vehCfg.custom
+          ? parseInt(vehCfg.custom["11"]) || -1
+          : -1) + 1,
+        4
+      )}
                     </div>
                     </div>
                     <div class="row">
                     <span>Freio</span>
-                    <small>${
-                      (vehCfg.custom
-                        ? parseInt(vehCfg.custom["12"]) || -1
-                        : -1) + 1
-                    } / 3</small>
+                    <small>${(vehCfg.custom
+        ? parseInt(vehCfg.custom["12"]) || -1
+        : -1) + 1
+      } / 3</small>
                     <div class="bar">
                         ${garage.generateBars(
-                          (vehCfg.custom
-                            ? parseInt(vehCfg.custom["12"]) || -1
-                            : -1) + 1,
-                          3
-                        )}
+        (vehCfg.custom
+          ? parseInt(vehCfg.custom["12"]) || -1
+          : -1) + 1,
+        3
+      )}
                     </div>
                     </div>
                     <div class="row">
                     <span>Transmissão</span>
-                    <small>${
-                      (vehCfg.custom
-                        ? parseInt(vehCfg.custom["13"]) || -1
-                        : -1) + 1
-                    } / 3</small>
+                    <small>${(vehCfg.custom
+        ? parseInt(vehCfg.custom["13"]) || -1
+        : -1) + 1
+      } / 3</small>
                     <div class="bar">
                         ${garage.generateBars(
-                          (vehCfg.custom
-                            ? parseInt(vehCfg.custom["13"]) || -1
-                            : -1) + 1,
-                          3
-                        )}
+        (vehCfg.custom
+          ? parseInt(vehCfg.custom["13"]) || -1
+          : -1) + 1,
+        3
+      )}
                     </div>
                     </div>
                     <div class="row">
                     <span>Suspensão</span>
-                    <small>${
-                      (vehCfg.custom
-                        ? parseInt(vehCfg.custom["15"]) || -1
-                        : -1) + 1
-                    } / 4</small>
+                    <small>${(vehCfg.custom
+        ? parseInt(vehCfg.custom["15"]) || -1
+        : -1) + 1
+      } / 4</small>
                     <div class="bar">
                         ${garage.generateBars(
-                          (vehCfg.custom
-                            ? parseInt(vehCfg.custom["15"]) || -1
-                            : -1) + 1,
-                          3
-                        )}
+        (vehCfg.custom
+          ? parseInt(vehCfg.custom["15"]) || -1
+          : -1) + 1,
+        3
+      )}
                     </div>
                     </div>
                     <div class="row">
                     <span>Blindagem</span>
-                    <small>${
-                      (vehCfg.custom
-                        ? parseInt(vehCfg.custom["16"]) || -1
-                        : -1) + 1
-                    } / 5</small>
+                    <small>${(vehCfg.custom
+        ? parseInt(vehCfg.custom["16"]) || -1
+        : -1) + 1
+      } / 5</small>
                     <div class="bar">
                         ${garage.generateBars(
-                          (vehCfg.custom
-                            ? parseInt(vehCfg.custom["16"]) || -1
-                            : -1) + 1,
-                          3
-                        )}
+        (vehCfg.custom
+          ? parseInt(vehCfg.custom["16"]) || -1
+          : -1) + 1,
+        3
+      )}
                     </div>
                     </div>  
                 </div>
                 <div class="column">
                     <div class="info-column">
                     <small>Status</small>
-                    <span>${
-                      vehCfg.taxLate
-                        ? "Taxas atrasadas"
-                        : vehCfg.exploded
-                        ? "Veículo Explodido"
-                        : vehCfg.impound
-                        ? "Veículo detido"
-                        : "Liberado"
-                    }</span>
+                    <span>${vehCfg.taxLate
+        ? "Taxas atrasadas"
+        : vehCfg.exploded
+          ? "Veículo Explodido"
+          : vehCfg.impound
+            ? "Veículo detido"
+            : "Liberado"
+      }</span>
                     </div>
                     <div class="info-column">
                     <small>Tipo</small>
                     <span>${garage.type}</span>
                     </div>
                     <div class="info-column">
-                    <small>${
-                      vehCfg.taxLate
-                        ? "Taxa"
-                        : vehCfg.exploded || vehCfg.impound
-                        ? "Seguro"
-                        : vehCfg.garageTax
-                        ? "Taxa de retirada"
-                        : "Taxa"
-                    }</small>
-                    <span>${
-                      vehCfg.taxLate || vehCfg.exploded || vehCfg.impound
-                        ? "$" + vehCfg.taxPrice
-                        : vehCfg.garageTax
-                        ? "$" + vehCfg.garageTax
-                        : "Sem taxas"
-                    }</span>
+                    <small>${vehCfg.taxLate
+        ? "Taxa"
+        : vehCfg.exploded || vehCfg.impound
+          ? "Seguro"
+          : vehCfg.garageTax
+            ? "Taxa de retirada"
+            : "Taxa"
+      }</small>
+                    <span>${vehCfg.taxLate || vehCfg.exploded || vehCfg.impound
+        ? "$" + vehCfg.taxPrice
+        : vehCfg.garageTax
+          ? "$" + vehCfg.garageTax
+          : "Sem taxas"
+      }</span>
                     </div>
                 </div>
                 </div>
@@ -544,44 +532,39 @@ var garage = {
                     </div>
                 </div>
                 <div class="btns">
-                    ${
-                      garage.nuiType == "sellNUI"
-                        ? '<input type="number" placeholder="' +
-                          garages.lang.typeSellPrice +
-                          '" id="garages-vehicle-value"></input> <button onclick="garage.sellVehicle()">' +
-                          garages.lang.sellVehicle +
-                          "</button>"
-                        : `${
-                            // `<button style="background: #d8a80a;" onclick="garage.storeNearestVehicle()">Guardar Próximo</button>`
-                            ""
-                          }
-                                ${
-                                  vehCfg.allowed != false && vehCfg.taxLate
-                                    ? `<button style="background: #FF2D2D;" onclick="garage.payTax()">${garages.lang.payTax}</button>`
-                                    : ""
-                                }
-                                ${
-                                  vehCfg.allowed != false && vehCfg.exploded
-                                    ? `<button style="background: #FF2D2D;" onclick="garage.payInsurance()">${garages.lang.payInsurance}</button>`
-                                    : ""
-                                }
-                                ${
-                                  vehCfg.allowed != false && vehCfg.impound
-                                    ? `<button style="background: #FF2D2D;" onclick="garage.removeFromDetention()">${garages.lang.payInsurance}</button>`
-                                    : ""
-                                }
-                                ${
-                                  vehCfg.allowed != false &&
-                                  !vehCfg.taxLate &&
-                                  !vehCfg.exploded &&
-                                  !vehCfg.impound
-                                    ? vehCfg.spawned
-                                      ? `
+                    ${garage.nuiType == "sellNUI"
+        ? '<input type="number" placeholder="' +
+        garages.lang.typeSellPrice +
+        '" id="garages-vehicle-value"></input> <button onclick="garage.sellVehicle()">' +
+        garages.lang.sellVehicle +
+        "</button>"
+        : `${
+        // `<button style="background: #d8a80a;" onclick="garage.storeNearestVehicle()">Guardar Próximo</button>`
+        ""
+        }
+                                ${vehCfg.allowed != false && vehCfg.taxLate
+          ? `<button style="background: #FF2D2D;" onclick="garage.payTax()">${garages.lang.payTax}</button>`
+          : ""
+        }
+                                ${vehCfg.allowed != false && vehCfg.exploded
+          ? `<button style="background: #FF2D2D;" onclick="garage.payInsurance()">${garages.lang.payInsurance}</button>`
+          : ""
+        }
+                                ${vehCfg.allowed != false && vehCfg.impound
+          ? `<button style="background: #FF2D2D;" onclick="garage.removeFromDetention()">${garages.lang.payInsurance}</button>`
+          : ""
+        }
+                                ${vehCfg.allowed != false &&
+          !vehCfg.taxLate &&
+          !vehCfg.exploded &&
+          !vehCfg.impound
+          ? vehCfg.spawned
+            ? `
                                             <button style="background: #FF2D2D;" onclick="garage.storeVehicle()">${garages.lang.storeVehicle}</button>`
-                                      : `<button  onclick="garage.spawnVehicle()">${garages.lang.spawnVehicle}</button>`
-                                    : ""
-                                }`
-                    }
+            : `<button  onclick="garage.spawnVehicle()">${garages.lang.spawnVehicle}</button>`
+          : ""
+        }`
+      }
 
                 </div>
             </footer>
