@@ -203,56 +203,56 @@ var garage = {
     );
 
     let motorStatus = (custom ? parseInt(custom["11"]) || -1 : -1) + 1;
-    $(".motor_tuning_garagem .status_tunning_garagem")
+    $(".motor_tuning_garagem")
       .html(`${motorStatus} / 4`)
       .removeClass("active_tunning");
     if (motorStatus !== 0)
-      $(".motor_tuning_garagem .status_tunning_garagem").addClass(
+      $(".motor_tuning_garagem").addClass(
         "active_tunning"
       );
 
     let brakingStatus = (custom ? parseInt(custom["12"]) || -1 : -1) + 1;
-    $(".freio_tuning_garagem .status_tunning_garagem")
+    $(".freio_tuning_garagem")
       .html(`${brakingStatus} / 3`)
       .removeClass("active_tunning");
     if (brakingStatus !== 0)
-      $(".freio_tuning_garagem .status_tunning_garagem").addClass(
+      $(".freio_tuning_garagem").addClass(
         "active_tunning"
       );
 
     let turboStatus = custom ? custom["18"] : false;
-    $(".turbo_tuning_garagem .status_tunning_garagem")
+    $(".turbo_tuning_garagem")
       .html(`${turboStatus ? "ATIVADO" : "DESATIVADO"}`)
       .removeClass("active_tunning");
     if (turboStatus)
-      $(".turbo_tuning_garagem .status_tunning_garagem").addClass(
+      $(".turbo_tuning_garagem").addClass(
         "active_tunning"
       );
 
     let suspencaoStatus = (custom ? parseInt(custom["15"]) || -1 : -1) + 1;
-    $(".suspencao_tuning_garagem .status_tunning_garagem")
+    $(".suspencao_tuning_garagem")
       .html(`${suspencaoStatus} / 4`)
       .removeClass("active_tunning");
     if (suspencaoStatus !== 0)
-      $(".suspencao_tuning_garagem .status_tunning_garagem").addClass(
+      $(".suspencao_tuning_garagem").addClass(
         "active_tunning"
       );
 
     let blindagemStatus = (custom ? parseInt(custom["16"]) || -1 : -1) + 1;
-    $(".blindagem_tuning_garagem .status_tunning_garagem")
+    $(".blindagem_tuning_garagem")
       .html(`${blindagemStatus} / 5`)
       .removeClass("active_tunning");
     if (blindagemStatus !== 0)
-      $(".blindagem_tuning_garagem .status_tunning_garagem").addClass(
+      $(".blindagem_tuning_garagem").addClass(
         "active_tunning"
       );
 
     let transmissaoStatus = (custom ? parseInt(custom["13"]) || -1 : -1) + 1;
-    $(".transmissao_tuning_garagem .status_tunning_garagem")
+    $(".transmissao_tuning_garagem")
       .html(`${transmissaoStatus} / 3`)
       .removeClass("active_tunning");
     if (transmissaoStatus !== 0)
-      $(".transmissao_tuning_garagem .status_tunning_garagem").addClass(
+      $(".transmissao_tuning_garagem").addClass(
         "active_tunning"
       );
 
@@ -264,43 +264,43 @@ var garage = {
       garage.selectedCar.maxSpeed + " KM/H"
     );
 
-    $(".freio_garagem .progress_garagem span").css(
+    $(".freio_garagem.data_percent::after").css(
       "width",
       (12 * garage.selectedCar.maxBraking) / 1.5 + "%"
     );
-    $(".freio_garagem .result_garagem").html(
+    $(".freio_garagem span").html(
       garage.selectedCar.maxBraking?.toFixed(2)
     );
 
-    $(".tracao_garagem .progress_garagem span").css(
+    $(".tracao_garagem.data_percent::after").css(
       "width",
       (12 * garage.selectedCar.maxTraction) / 3 + "%"
     );
-    $(".tracao_garagem .result_garagem").html(
+    $(".tracao_garagem span").html(
       garage.selectedCar.maxTraction?.toFixed(2)
     );
 
-    $(".motor_garagem .progress_garagem span").css(
+    $(".motor_garagem.data_percent::after").css(
       "width",
       garage.selectedCar.engine / 10 + "%"
     );
-    $(".motor_garagem .result_garagem").html(
+    $(".motor_garagem span").html(
       garage.selectedCar.engine / 10 + "%"
     );
 
-    $(".lataria_garagem .progress_garagem span").css(
+    $(".lataria_garagem.data_percent::after").css(
       "width",
       garage.selectedCar.body / 10 + "%"
     );
-    $(".lataria_garagem .result_garagem").html(
+    $(".lataria_garagem span").html(
       garage.selectedCar.body / 10 + "%"
     );
 
-    $(".combustivel_garagem .progress_garagem span").css(
+    $(".combustivel_garagem.data_percent::after").css(
       "width",
       garage.selectedCar.fuel + "%"
     );
-    $(".combustivel_garagem .result_garagem").html(
+    $(".combustivel_garagem span").html(
       garage.selectedCar.fuel + "%"
     );
   },
